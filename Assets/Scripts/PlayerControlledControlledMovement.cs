@@ -3,10 +3,10 @@
 public class PlayerControlledControlledMovement : MonoBehaviour
 {
     public float speed = 5.0f;
-    Rigidbody2D rigidbody2D;
+    Rigidbody2D theObject;
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        theObject = GetComponent<Rigidbody2D>();
     }
 
 
@@ -15,7 +15,7 @@ public class PlayerControlledControlledMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
-        rigidbody2D.velocity = new Vector2(x, y) * speed;
-        rigidbody2D.angularVelocity = 0.0f;
+        theObject.velocity = new Vector2(x, y) * speed;
+        theObject.angularVelocity = 0.0f;
     }
 }
