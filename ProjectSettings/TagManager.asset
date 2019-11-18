@@ -13,9 +13,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Enemy Heath
+  - PlayerDamage
+  - PlayerAllies
   - 
   - 
   - 
@@ -40,4 +40,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background deep
+    uniqueID: 3265371037
+    locked: 0
+  - name: Background
+    uniqueID: 3544984397
+    locked: 0
+  - name: Player
+    uniqueID: 3147191041
+    locked: 0
+  - name: Player followers
+    uniqueID: 4014192669
+    locked: 0
+  - name: Enemies
+    uniqueID: 3109190545
+    locked: 0
+  - name: Bullets
+    uniqueID: 1598340505
+    locked: 0
+  - name: FX
+    uniqueID: 3336666427
     locked: 0
