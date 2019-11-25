@@ -18,4 +18,5 @@ public class HeathSystem : MonoBehaviour
             onDie.Invoke();
         }
     }
-}
+}
+
