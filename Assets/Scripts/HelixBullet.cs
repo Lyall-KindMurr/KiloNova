@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class HelixBullet : MonoBehaviour
 {
-    public float moveSpeed = 100.0f;
-    public int damage = 5
-        ;
-    private void Start()
+    public float moveSpeed = 250.0f;
+    public int damage = 5;
+    private void OnEnable()
     {
         GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed);
     }
@@ -26,6 +25,12 @@ public class HelixBullet : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke("Die");
     }
 }
+

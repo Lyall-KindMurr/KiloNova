@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class PlayerControlledControlledMovement : MonoBehaviour
+public class ShipMoveMouseRelative : MonoBehaviour
 {
     public float speed = 5.0f;
     Rigidbody2D theObject;
@@ -15,7 +17,7 @@ public class PlayerControlledControlledMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
-        theObject.velocity = new Vector2(x, y) * speed;
+        theObject.transform.Translate(new Vector2(x, y) * speed / 10.0f);
         theObject.angularVelocity = 0.0f;
     }
 }

@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public float smoothing = 10.0f;
-
+    public UnityEvent PlayermoveDown;
 
     void FixedUpdate()
     {

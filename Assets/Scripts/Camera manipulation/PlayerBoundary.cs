@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBoundary : MonoBehaviour
 {
     Rigidbody2D theObject;
-    public float limitX = 8, limitminuX = -8;
+    public float limitX = 8, limitminuX = -8, limitminusY =-5;
     public float pushingForce;
 
     //variables are sepparate, to allow a non-symetrical environment during gameplay
@@ -44,5 +44,15 @@ public class PlayerBoundary : MonoBehaviour
             theObject.velocity = new Vector2(pushingForce *theObject.velocity.x, 0);
         }
         
+        if(theObject.transform.position.y < limitminusY)
+        {
+            theObject.transform.position = new Vector2(theObject.transform.position.x, limitminusY);
+            theObject.velocity = Vector2.zero;
+            Debug.Log("Hit lower wall");
+            theObject.velocity = new Vector2(0, pushingForce * theObject.velocity.x);
+        }
+
+
+
     }
 }

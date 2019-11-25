@@ -2,9 +2,9 @@
 
 public class BasicBullet : MonoBehaviour
 {
-    public float moveSpeed = 100.0f;
+    public float moveSpeed = 500.0f;
     public int damage = 5;
-    private void Start()
+    private void OnEnable()
     {
         GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed);
     }
@@ -23,6 +23,11 @@ public class BasicBullet : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke("Die");
     }
 }

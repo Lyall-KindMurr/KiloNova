@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - Enemy Heath
+  - EnemyHeath
   - PlayerDamage
   - PlayerAllies
-  - 
+  - EnemyDamage
   - 
   - 
   - 
