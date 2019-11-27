@@ -136,6 +136,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1125392444627298197, guid: 1ada432b450634241b2f978de331867b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125392444627298197, guid: 1ada432b450634241b2f978de331867b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125392444627298198, guid: 1ada432b450634241b2f978de331867b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125392444627298198, guid: 1ada432b450634241b2f978de331867b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125392444627298198, guid: 1ada432b450634241b2f978de331867b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ada432b450634241b2f978de331867b, type: 3}
 --- !u!4 &7541190386839249849 stripped
@@ -151,11 +176,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4046927888546497917}
     m_Modifications:
-    - target: {fileID: 8801523678943407017, guid: 8e77af826876cf14ba89622ba38043c0,
-        type: 3}
-      propertyPath: m_Name
-      value: BulletHelixRight
-      objectReference: {fileID: 0}
     - target: {fileID: 8801523678943407019, guid: 8e77af826876cf14ba89622ba38043c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -210,6 +230,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801523678943407019, guid: 8e77af826876cf14ba89622ba38043c0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801523678943407019, guid: 8e77af826876cf14ba89622ba38043c0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801523678943407017, guid: 8e77af826876cf14ba89622ba38043c0,
+        type: 3}
+      propertyPath: m_Name
+      value: BulletHelixRight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e77af826876cf14ba89622ba38043c0, type: 3}
