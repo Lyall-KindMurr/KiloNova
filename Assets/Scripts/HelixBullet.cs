@@ -29,22 +29,22 @@ public class HelixBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
-        //Die();
+        Die();
     }
 
-    //private void OnBecameInvisible()
-    //{
-    //    Die();
-    //}
+    private void OnBecameInvisible()
+    {
+        Die();
+    }
 
-    //private void Die()
-    //{
-    //    gameObject.SetActive(false);
-    //}
+    private void Die()
+    {
+        gameObject.SetActive(false);
+    }
 
-    //private void OnDisable()
-    //{
-    //    CancelInvoke("Die");
-    //}
+    private void OnDisable()
+    {
+        CancelInvoke("Die");
+    }
 }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grenade : MonoBehaviour
+public class GrenadeLauncher : MonoBehaviour
 {
 
     public float delay = 2f;
@@ -39,23 +39,12 @@ public class Grenade : MonoBehaviour
 
         //find objects
 
-        Collider[] collidersToDestroy = Physics.OverlapSphere(transform.position, blastRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
 
-        foreach (Collider nearbyObject in collidersToDestroy)
-        {
-            HeathSystem dest = nearbyObject.GetComponent<HeathSystem>();
-            if(dest != null)
-            {
-                dest.TakeDamage(10);
-            }
-        }
-
-        Collider[] collidersToMove = Physics.OverlapSphere(transform.position, blastRadius);
-
-        foreach (Collider nearbyObject in collidersToMove)
+        foreach (Collider nearbyObject in colliders)
         {
             Rigidbody2D rb = nearbyObject.attachedRigidbody.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            if(rb != null)
             {
                 rb.AddExplosionForce(explosionForce, transform.position, blastRadius);
             }
