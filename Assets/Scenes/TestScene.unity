@@ -499,7 +499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 644965288}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: LaserPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662626824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a214741439f22e43a8eb556b7992e05, type: 3}
   m_Name: 
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662626824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18449ed17b433bc459c00b79eedb3446, type: 3}
   m_Name: 
@@ -756,8 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3540ab70180e8bd4684495f2404c3f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 40
-  grenadePrefab: {fileID: 1300407728578284975, guid: 58288aed89c93524ca2d0a31df3f09c8,
+  grenadePrefab: {fileID: 4674340834126153922, guid: a392239608f76be4a8d114024ad027d6,
     type: 3}
 --- !u!114 &662626836
 MonoBehaviour:
@@ -774,6 +773,9 @@ MonoBehaviour:
   firePoint: {fileID: 644965288}
   damage: 10
   linerenderer: {fileID: 1470254294}
+  mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1078671685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1109,7 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 0
+  m_UseWorldSpace: 1
   m_Loop: 0
 --- !u!4 &1470254295
 Transform:
@@ -1117,7 +1119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470254293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0040294025, y: 0.8491589, z: -9.014173}
+  m_LocalPosition: {x: -0.0040294025, y: 0.8491589, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 662626828}
@@ -1448,6 +1450,11 @@ PrefabInstance:
     - target: {fileID: 1468321262, guid: 7f900657f9098f845959aaa6d9724f86, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018931950971889679, guid: 7f900657f9098f845959aaa6d9724f86,
+        type: 3}
+      propertyPath: health
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

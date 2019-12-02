@@ -7,6 +7,8 @@ public class Laser : MonoBehaviour
     public Transform firePoint;
     public int damage = 10;
     public LineRenderer linerenderer;
+    public LayerMask mask;
+
 
     void Update()
     {
@@ -18,7 +20,7 @@ public class Laser : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.up);
+        RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.up, 100, mask);
 
         if (hitInfo)
         {
@@ -35,7 +37,7 @@ public class Laser : MonoBehaviour
         else
         {
             linerenderer.SetPosition(0, firePoint.position);
-            linerenderer.SetPosition(1, firePoint.position + firePoint.up *100);
+            linerenderer.SetPosition(1, firePoint.position + firePoint.up *20);
         }
 
         linerenderer.enabled = true;

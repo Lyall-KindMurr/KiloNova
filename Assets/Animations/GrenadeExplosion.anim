@@ -22,20 +22,20 @@ AnimationClip:
     - time: 0
       value: {fileID: -1168735320804426414, guid: eede5cea55a967748a7b3d08073e7fa2,
         type: 3}
-    - time: 0.016666668
+    - time: 0.0625
       value: {fileID: -4190009552702150490, guid: eede5cea55a967748a7b3d08073e7fa2,
         type: 3}
-    - time: 0.033333335
+    - time: 0.125
       value: {fileID: 5852158104068041811, guid: eede5cea55a967748a7b3d08073e7fa2,
         type: 3}
-    - time: 0.05
+    - time: 0.1875
       value: {fileID: -4181362831958127935, guid: eede5cea55a967748a7b3d08073e7fa2,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 16
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.06666667
+    m_StopTime: 0.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,7 +79,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.05
+  - time: 0.1875
     functionName: Die
     data: 
     objectReferenceParameter: {fileID: 0}

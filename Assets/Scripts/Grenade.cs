@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrenadeLauncher : MonoBehaviour
+public class Grenade : MonoBehaviour
 {
-
+    public LayerMask Mask;
+    public float throwForce = 200f;
     public float delay = 2f;
-    public float blastRadius = 5f;
+    public float blastRadius = 300f;
     public float explosionForce = 500f;
+    public float damage = 10;
+    
 
     public GameObject explosionEffect;
 
     float countdown;
     bool hasExploded = false;
 
+    
+
     void Start()
     {
         countdown = delay;
+
+        GetComponent<Rigidbody2D>().AddForce(transform.up * (throwForce * 2), ForceMode2D.Impulse);
     }
 
 
@@ -39,14 +46,16 @@ public class GrenadeLauncher : MonoBehaviour
 
         //find objects
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, blastRadius);
+        
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastRadius, Mask);
 
-        foreach (Collider nearbyObject in colliders)
+        foreach (Collider2D nearbyObject in colliders)
         {
-            Rigidbody2D rb = nearbyObject.attachedRigidbody.GetComponent<Rigidbody2D>();
-            if(rb != null)
+            Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
             {
                 rb.AddExplosionForce(explosionForce, transform.position, blastRadius);
+                nearbyObject.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
         }
 
