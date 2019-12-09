@@ -35,7 +35,7 @@ public class PlayerControlledControlledMovement : MonoBehaviour
             dodgeMemory = movement;
             dodgeMemory.Normalize();
             this.GetComponent<CapsuleCollider2D>().enabled = false;
-            Debug.Log("started rolling");
+            //Debug.Log("started rolling");
         }
         //What all this does is set a timer for the dodge and record what direction you're dodging in, if you're moving, trying to dodge, and not standing perfectly still.
 
@@ -45,14 +45,16 @@ public class PlayerControlledControlledMovement : MonoBehaviour
             dodgeTime -= 1;
             dodgeMemory.Normalize();
             theObject.velocity = dodgeMemory * dodgeSpeed;
-            Debug.Log("rolling");
+            //Debug.Log("rolling");
 
             if(dodgeTime<1)
             {
                 this.GetComponent<CapsuleCollider2D>().enabled = true;
-                Debug.Log("stopped rolling");
+                //Debug.Log("stopped rolling");
+                //reenable the player collider
+
+                theObject.velocity = Vector2.zero;
             }
-            //reenable the player collider
         }
         //If you're still dodging (counter isn't zero yet), move in the dodge direction at the dodge speed.
     }

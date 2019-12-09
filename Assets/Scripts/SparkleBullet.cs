@@ -12,7 +12,7 @@ public class SparkleBullet : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(transform.up * moveSpeed);
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 

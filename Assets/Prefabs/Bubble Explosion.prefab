@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5854138914826703778}
   - component: {fileID: 1336048373685590731}
   - component: {fileID: 2777099951564958792}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bubble Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Animator:
   m_GameObject: {fileID: 5854138914826703781}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0c85ef32e0d151546a35fd3be1bc40b8, type: 2}
+  m_Controller: {fileID: 9100000, guid: ea876c6c9b69c7b42a4733165474f71b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

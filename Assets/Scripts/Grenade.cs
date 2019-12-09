@@ -48,7 +48,7 @@ public class Grenade : MonoBehaviour
 
         
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, blastRadius, Mask);
-
+        
         foreach (Collider2D nearbyObject in colliders)
         {
             Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
@@ -63,5 +63,10 @@ public class Grenade : MonoBehaviour
 
         Destroy(gameObject);
 
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, blastRadius);
     }
 }

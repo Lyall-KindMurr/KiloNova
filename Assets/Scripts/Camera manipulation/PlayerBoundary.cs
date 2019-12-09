@@ -25,10 +25,11 @@ public class PlayerBoundary : MonoBehaviour
         if(theObject.transform.position.x > limitX)
         {
             theObject.transform.position = new Vector2(limitX, theObject.transform.position.y);
-            
+            theObject.velocity = Vector2.zero;
             Debug.Log("Hit right wall");
 
-            theObject.AddForce(new Vector2(-pushingForce * theObject.velocity.x, 0), ForceMode2D.Impulse);
+            theObject.velocity = new Vector2(-pushingForce * theObject.velocity.x, 0);
+            //theObject.AddForce(new Vector2(-pushingForce * theObject.velocity.x, 0), ForceMode2D.Impulse);
 
 
             //sets the item position to the edge, and gives them slight velocity towards the center
