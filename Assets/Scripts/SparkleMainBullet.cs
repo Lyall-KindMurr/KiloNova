@@ -6,7 +6,7 @@ public class SparkleMainBullet : MonoBehaviour
 {
     public float moveSpeed = 250.0f;
     public float lifeTime = 1.5f;
-    public float bulletCounter = 0.15f;
+    public float bulletCounter = 0.05f;
     public GameObject branchExplosion;
 
     int spread =10;
@@ -21,10 +21,10 @@ public class SparkleMainBullet : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         lifeTime -= Time.deltaTime;
-        if(lifeTime <= 0 ) //if the bullet is still alive
+        if(lifeTime >= 0 ) //if the bullet is still alive
         {
             theBulletCounter -= Time.deltaTime;
             if(theBulletCounter <= 0) //the time to spawn a bullet arrived
@@ -32,9 +32,9 @@ public class SparkleMainBullet : MonoBehaviour
                 int randomY = Random.Range(-spread, spread);
                 int randomX = Random.Range(-spread, spread);
 
-
-
-                Instantiate(branchExplosion, this.transform.position,this.transform.rotation);
+                GameObject explosion = Instantiate(branchExplosion, transform.position, transform.rotation);
+                explosion.transform.Rotate(randomX, randomY, 0);
+                
                 theBulletCounter = bulletCounter;
             } 
         }

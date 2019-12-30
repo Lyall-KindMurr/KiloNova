@@ -31,6 +31,7 @@ public class PlayerControlledControlledMovement : MonoBehaviour
 
         if ((Input.GetButtonDown("Fire1") && movement != Vector2.zero) && dodgeTime == 0) 
         {
+
             dodgeTime = dodgeFrames;
             dodgeMemory = movement;
             dodgeMemory.Normalize();

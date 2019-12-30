@@ -6,7 +6,6 @@ public class PlayerWeaponWeak : MonoBehaviour
     public Transform bulletSpawn1;
     public Transform bulletSpawn2;
     public float fireTime = 0.25f;
-    bool fireLeft = false;
 
     private bool isFiring = false;
 

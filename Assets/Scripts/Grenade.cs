@@ -63,6 +63,7 @@ public class Grenade : MonoBehaviour
 
         Destroy(gameObject);
 
+        //the Explosion 
     }
 
     private void OnDrawGizmosSelected()
