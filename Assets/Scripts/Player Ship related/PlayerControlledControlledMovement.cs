@@ -31,12 +31,22 @@ public class PlayerControlledControlledMovement : MonoBehaviour
 
         if ((Input.GetButtonDown("Fire1") && movement != Vector2.zero) && dodgeTime == 0) 
         {
-
             dodgeTime = dodgeFrames;
             dodgeMemory = movement;
             dodgeMemory.Normalize();
             this.GetComponent<CapsuleCollider2D>().enabled = false;
-            //Debug.Log("started rolling");
+
+            //rolling animation elements
+            /*
+            if (movement.x < 0)
+            {
+                this.SendMessage("Rolling Left");
+            }
+            else if (movement.x > 0 )
+            {
+                this.SendMessage("Rolling right",SendMessageOptions.DontRequireReceiver);
+            }
+            */
         }
         //What all this does is set a timer for the dodge and record what direction you're dodging in, if you're moving, trying to dodge, and not standing perfectly still.
 
