@@ -26,6 +26,13 @@ public class CameraFollow : MonoBehaviour
             //move the player the same amount as the camera, to "lock" their position on the screen
 
             target.transform.Translate(new Vector2(0, speed) * Time.deltaTime,Space.World);
+
+            //move all children slightly, according to the player location
+            /*
+            Transform childrenPosition = GetComponentInChildren<Transform>();
+            childrenPosition.transform.Translate(new Vector2(childrenPosition.transform.position.x, childrenPosition.transform.position.y)
+                                                    + (new Vector2((target.transform.position.x - thisCamera.transform.position.x) *0.01f, (target.transform.position.y - thisCamera.transform.position.y) * 0.01f)));
+            */
         }
     }
 

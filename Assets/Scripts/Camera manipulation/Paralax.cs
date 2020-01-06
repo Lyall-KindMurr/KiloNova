@@ -8,6 +8,7 @@ public class Paralax : MonoBehaviour
     public GameObject cam;
     public float paralaxEffect;
     public double scrollAdjustment;
+    
 
     
 
@@ -34,6 +35,6 @@ public class Paralax : MonoBehaviour
 
     private void moveUp()
     {
-        startpos += 3 * height;
+        startpos += 2 * height;
     }
 }
