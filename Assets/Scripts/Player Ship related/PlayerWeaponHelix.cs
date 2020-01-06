@@ -7,7 +7,6 @@ public class PlayerWeaponHelix : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform bulletSpawn1;
     public float fireTime = 0.5f;
-    bool fireLeft = false;
 
     private bool isFiring = false;
 

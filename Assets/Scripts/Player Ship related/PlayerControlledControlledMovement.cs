@@ -8,15 +8,18 @@ public class PlayerControlledControlledMovement : MonoBehaviour
     public int dodgeSpeed;
     public int dodgeFrames;
 
+    Animator anim;
+
     Vector2 dodgeMemory = new Vector2();
    
     void Start()
     {
+        anim = GetComponent<Animator>();
         theObject = GetComponent<Rigidbody2D>();
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -29,7 +32,7 @@ public class PlayerControlledControlledMovement : MonoBehaviour
         theObject.transform.Translate(new Vector2(x, y) * speed / 10.0f, Space.World);
         theObject.angularVelocity = 0.0f;
 
-        if ((Input.GetButtonDown("Fire1") && movement != Vector2.zero) && dodgeTime == 0) 
+        if ((Input.GetMouseButton(1) && movement != Vector2.zero) && dodgeTime == 0) 
         {
             dodgeTime = dodgeFrames;
             dodgeMemory = movement;
@@ -37,16 +40,16 @@ public class PlayerControlledControlledMovement : MonoBehaviour
             this.GetComponent<CapsuleCollider2D>().enabled = false;
 
             //rolling animation elements
-            /*
+            
             if (movement.x < 0)
             {
-                this.SendMessage("Rolling Left");
+                anim.SetBool("Rolling Left", true);
             }
             else if (movement.x > 0 )
             {
-                this.SendMessage("Rolling right",SendMessageOptions.DontRequireReceiver);
+                anim.SetBool("Rolling Right", true);
             }
-            */
+            
         }
         //What all this does is set a timer for the dodge and record what direction you're dodging in, if you're moving, trying to dodge, and not standing perfectly still.
 
@@ -60,6 +63,10 @@ public class PlayerControlledControlledMovement : MonoBehaviour
 
             if(dodgeTime<1)
             {
+                //stop the rolling animation
+                anim.SetBool("Rolling Right", false);
+                anim.SetBool("Rolling Left", false);
+                Debug.Log("ended rolling");
                 this.GetComponent<CapsuleCollider2D>().enabled = true;
                 //Debug.Log("stopped rolling");
                 //reenable the player collider
