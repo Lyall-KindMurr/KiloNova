@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
-public class RedHealthSystem : MonoBehaviour
+public class ChargeHealthSystem : MonoBehaviour
 {
     public int health = 15;
     public UnityEvent onDie;
@@ -18,7 +20,7 @@ public class RedHealthSystem : MonoBehaviour
 
     public void TakeDamageSparkle(int damage)
     {
-        health -= damage*2 ;
+        health -= damage;
         onDamaged.Invoke(health);
         if (health < 1)
         {
@@ -37,7 +39,7 @@ public class RedHealthSystem : MonoBehaviour
     }
     public void TakeDamageSniper(int damage)
     {
-        health -= damage;
+        health -= damage * 2;
         onDamaged.Invoke(health);
         if (health < 1)
         {
@@ -55,5 +57,3 @@ public class RedHealthSystem : MonoBehaviour
         }
     }
 }
-
-

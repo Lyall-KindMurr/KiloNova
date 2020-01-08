@@ -39,25 +39,18 @@ public class InventoryManager : MonoBehaviour
             if(selectedWeapon == 0)
             {
                 this.GetComponent<PlayerWeaponHelix>().enabled = true;
-                Debug.Log("set weapon to 0");
             }
             else if (selectedWeapon == 1)
             {
                 this.GetComponent<Laser>().enabled = true;
-                
-                Debug.Log("set weapon to 1");
             }
             else if (selectedWeapon == 2)
             {
                 this.GetComponent<Grenade_Launcher>().enabled = true;
-                
-                Debug.Log("set weapon to 2");
             }
             else if (selectedWeapon == 3)
             {
                 this.GetComponent<Slasher>().enabled = true;
-                
-                Debug.Log("set weapon to 3");
             }
         }
     }
