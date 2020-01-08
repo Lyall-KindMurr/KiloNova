@@ -7,6 +7,9 @@ public class PlayerControlledControlledMovement : MonoBehaviour
     int dodgeTime;
     public int dodgeSpeed;
     public int dodgeFrames;
+    public int rollCooldown;
+
+    private int canRoll;
 
     Animator anim;
 
@@ -21,6 +24,13 @@ public class PlayerControlledControlledMovement : MonoBehaviour
 
     void Update()
     {
+        //tick down the roll variable
+
+        if(canRoll > 0)
+        {
+            canRoll--;
+        }
+
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -32,7 +42,7 @@ public class PlayerControlledControlledMovement : MonoBehaviour
         theObject.transform.Translate(new Vector2(x, y) * speed / 10.0f, Space.World);
         theObject.angularVelocity = 0.0f;
 
-        if ((Input.GetMouseButton(1) && movement != Vector2.zero) && dodgeTime == 0) 
+        if ((Input.GetMouseButton(1) && movement != Vector2.zero) && dodgeTime == 0 && canRoll <= 0) 
         {
             dodgeTime = dodgeFrames;
             dodgeMemory = movement;
@@ -72,6 +82,10 @@ public class PlayerControlledControlledMovement : MonoBehaviour
                 //reenable the player collider
 
                 theObject.velocity = Vector2.zero;
+
+                //stop rolling for a while
+
+                canRoll = rollCooldown;
             }
         }
         //If you're still dodging (counter isn't zero yet), move in the dodge direction at the dodge speed.

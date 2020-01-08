@@ -5,7 +5,7 @@ using UnityEngine;
 public class SparkleBullet : MonoBehaviour
 {
     public float moveSpeed = 50.0f;
-    public int damage = 10;
+    public int damage = 5;
 
     private void OnEnable()
     {
@@ -14,7 +14,7 @@ public class SparkleBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+        other.transform.SendMessage("TakeDamageSparkle", damage, SendMessageOptions.DontRequireReceiver);
 
     }
 

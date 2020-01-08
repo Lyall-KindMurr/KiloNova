@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Reversed: 1
   LoopLength: 1
-  Density: 0.17
+  Density: 0.25
 --- !u!1 &6844456712181192593
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ PrefabInstance:
     - target: {fileID: 1723395791071891523, guid: ba9e76a1f61015a46985cda8f15e1223,
         type: 3}
       propertyPath: Density
-      value: 0.17
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba9e76a1f61015a46985cda8f15e1223, type: 3}

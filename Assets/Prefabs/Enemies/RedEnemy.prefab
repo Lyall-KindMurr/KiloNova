@@ -70,16 +70,15 @@ GameObject:
   m_Component:
   - component: {fileID: 3018931950971889672}
   - component: {fileID: 3018931950971889673}
-  - component: {fileID: 3018931950971889679}
+  - component: {fileID: -1570595228246784345}
+  - component: {fileID: 1468321263}
   - component: {fileID: 9090769186779372422}
-  - component: {fileID: 3018931950971889675}
-  - component: {fileID: 6668604435257435995}
+  - component: {fileID: 2287343412411758130}
+  - component: {fileID: 2618961665562884293}
   - component: {fileID: 3018931950971889674}
-  - component: {fileID: 6625813104300227773}
   - component: {fileID: -914928212289642268}
   - component: {fileID: 1468321262}
-  - component: {fileID: 1468321263}
-  - component: {fileID: 2834056772449348150}
+  - component: {fileID: 1702524527}
   m_Layer: 8
   m_Name: RedEnemy
   m_TagString: Untagged
@@ -117,7 +116,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -153,7 +151,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3018931950971889679
+--- !u!114 &-1570595228246784345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,14 +160,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 3018931950971889716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2602d2c3338a99849ba504202932abb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a0b39047c50c1f44808550eb73dc0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  prefabToSpawn: {fileID: 3691924774430096384, guid: 29bb28664f8656c439c8e97e8fd824f5,
+    type: 3}
+  adjustmentAngle: 270
+--- !u!114 &1468321263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018931950971889716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2fe51759648b44388a8cce6cb21940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9090769186779372422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018931950971889716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0b39047c50c1f44808550eb73dc0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 8979378780151624817, guid: 05644974d04f4454b976d632a448fbde,
+    type: 3}
+  adjustmentAngle: 270
+--- !u!114 &2287343412411758130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018931950971889716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1604a52ed855014eb73eed4f2c3159d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9090769186779372422}
+      - m_Target: {fileID: -1570595228246784345}
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
@@ -191,53 +231,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onDamaged:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &9090769186779372422
+      m_Calls:
+      - m_Target: {fileID: -1570595228246784345}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &2618961665562884293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3018931950971889716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a0b39047c50c1f44808550eb73dc0e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a49da80dad56634db907b8f87fc54db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 8979378780151624817, guid: 05644974d04f4454b976d632a448fbde,
-    type: 3}
-  adjustmentAngle: 270
---- !u!114 &3018931950971889675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018931950971889716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3581d81ed02d9b94bb124a32a07e9cc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  smoothing: 10
-  adjustmentAngle: 270
---- !u!114 &6668604435257435995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018931950971889716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c98d11d32a4dacf448d8a5bafb2dd060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 0.5
+  speedx: 0
+  speedy: -0.15
 --- !u!114 &3018931950971889674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,44 +279,8 @@ MonoBehaviour:
     type: 3}
   bulletSpawn1: {fileID: 3018931950412912772}
   bulletSpawn2: {fileID: 3018931949912901400}
-  fireTime: 0.1
---- !u!114 &6625813104300227773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018931950971889716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec92e8912c683fd49972f7d5455ced38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSpawn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6668604435257435995}
-        m_MethodName: SetTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3018931950971889675}
-        m_MethodName: SetTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  fireTimeMin: 50
+  fireTimeMax: 300
 --- !u!61 &-914928212289642268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -305,7 +294,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0017719269, y: -0.026579142}
+  m_Offset: {x: 0.0072000027, y: -0.026579142}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -316,7 +305,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.560246, y: 0.8031583}
+  m_Size: {x: 0.8967867, y: 0.8031583}
   m_EdgeRadius: 0
 --- !u!95 &1468321262
 Animator:
@@ -337,19 +326,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1468321263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018931950971889716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db2fe51759648b44388a8cce6cb21940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!50 &2834056772449348150
+--- !u!50 &1702524527
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -362,7 +339,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 7
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

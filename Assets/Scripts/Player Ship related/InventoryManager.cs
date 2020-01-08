@@ -4,8 +4,65 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    private static bool[] weaponPicker = new bool[5];
+    public float swapTime;
 
+    private float waitingLeft;
+    private int selectedWeapon = 0;
+
+    private void Update()
+    {
+        if(Input.GetButtonDown("Fire3") == true)
+        {
+            if (selectedWeapon == 3)
+            {
+                selectedWeapon = 0;
+            }
+            else
+            { selectedWeapon++; }
+
+            waitingLeft = swapTime;
+            Debug.Log("set waitingleft to swaptime");
+        }
+        //if you still have to wait, tick down
+        if(waitingLeft > 0)
+        {
+            waitingLeft--;
+            Debug.Log("waiting for X more frames :" + waitingLeft);
+            this.GetComponent<Slasher>().enabled = false;
+            this.GetComponent<PlayerWeaponHelix>().enabled = false;
+            this.GetComponent<Laser>().enabled = false;
+            this.GetComponent<Grenade_Launcher>().enabled = false;
+        }
+        //you waited the time, and this happens every frame.
+        else
+        {
+            if(selectedWeapon == 0)
+            {
+                this.GetComponent<PlayerWeaponHelix>().enabled = true;
+                Debug.Log("set weapon to 0");
+            }
+            else if (selectedWeapon == 1)
+            {
+                this.GetComponent<Laser>().enabled = true;
+                
+                Debug.Log("set weapon to 1");
+            }
+            else if (selectedWeapon == 2)
+            {
+                this.GetComponent<Grenade_Launcher>().enabled = true;
+                
+                Debug.Log("set weapon to 2");
+            }
+            else if (selectedWeapon == 3)
+            {
+                this.GetComponent<Slasher>().enabled = true;
+                
+                Debug.Log("set weapon to 3");
+            }
+        }
+    }
+
+    /*
     void Start()
     {
         weaponPicker[1] = true;
@@ -16,53 +73,62 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        //i have 4 weapons, for 4 combinations of weapons
+        
 
-        if (Input.GetAxis("left alt") == 1)
+        if (Input.GetKeyDown("left alt") == true)
         {
             weaponPicker[1] = false;
             weaponPicker[2] = false;
             weaponPicker[3] = false;
             weaponPicker[4] = false;
-            StartCoroutine(Wait(25));
-            swapWeapon();
-        }
 
-        if (weaponPicker[1])
-        {
-            this.GetComponent<PlayerWeaponHelix>().enabled = true;
-            this.GetComponent<Laser>().enabled = true;
-            this.GetComponent<Grenade_Launcher>().enabled = false;
-            this.GetComponent<Slasher>().enabled = false;
-        }
-        if (weaponPicker[2])
-        {
-            this.GetComponent<PlayerWeaponHelix>().enabled = false;
-            this.GetComponent<Laser>().enabled = true;
-            this.GetComponent<Grenade_Launcher>().enabled = true;
-            this.GetComponent<Slasher>().enabled = false;
-        }
-        if (weaponPicker[3])
-        {
             this.GetComponent<PlayerWeaponHelix>().enabled = false;
             this.GetComponent<Laser>().enabled = false;
-            this.GetComponent<Grenade_Launcher>().enabled = true;
-            this.GetComponent<Slasher>().enabled = true;
-        }
-        if (weaponPicker[4])
-        {
-            this.GetComponent<PlayerWeaponHelix>().enabled = true;
-            this.GetComponent<Laser>().enabled = false;
             this.GetComponent<Grenade_Launcher>().enabled = false;
-            this.GetComponent<Slasher>().enabled = true;
+            this.GetComponent<Slasher>().enabled = false;
+
+            waitingLeft = swapTime;            
+        }
+
+
+        if (waitingLeft >= 0)
+        {
+            waitingLeft--;
+            Debug.Log("waiting for frames:" + waitingLeft);
+        }
+        else
+        {
+            if (weaponPicker[1])
+            {
+                this.GetComponent<PlayerWeaponHelix>().enabled = true;
+                this.GetComponent<Laser>().enabled = false;
+                this.GetComponent<Grenade_Launcher>().enabled = false;
+                this.GetComponent<Slasher>().enabled = false;
+            }
+            else if (weaponPicker[2])
+            {
+                this.GetComponent<PlayerWeaponHelix>().enabled = false;
+                this.GetComponent<Laser>().enabled = true;
+                this.GetComponent<Grenade_Launcher>().enabled = false;
+                this.GetComponent<Slasher>().enabled = false;
+            }
+            else if (weaponPicker[3])
+            {
+                this.GetComponent<PlayerWeaponHelix>().enabled = false;
+                this.GetComponent<Laser>().enabled = false;
+                this.GetComponent<Grenade_Launcher>().enabled = true;
+                this.GetComponent<Slasher>().enabled = false;
+            }
+            else if (weaponPicker[4])
+            {
+                this.GetComponent<PlayerWeaponHelix>().enabled = false;
+                this.GetComponent<Laser>().enabled = false;
+                this.GetComponent<Grenade_Launcher>().enabled = false;
+                this.GetComponent<Slasher>().enabled = true;
+            }
         }
     }
-
-    IEnumerator Wait(int timeToWait)
-    {
-
-    }
-
+    
     void swapWeapon()
     {
         if (weaponPicker[1] == true)
@@ -84,6 +150,7 @@ public class InventoryManager : MonoBehaviour
             weaponPicker[4] = false;
             weaponPicker[1] = true;
         }
+        
     }
-
+    */
 }
