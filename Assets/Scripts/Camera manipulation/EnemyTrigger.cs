@@ -16,7 +16,7 @@ public class EnemyTrigger : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(true);
-            child.GetComponent<Movedown>().enabled = true;
+            child.GetComponent<MoveDirection>().enabled = true;
         }
         Debug.Log("Enabled children");
         this.GetComponent<Scrolling>().enabled = false;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movedown : MonoBehaviour
+public class MoveDirection : MonoBehaviour
 {
     public float speedx;
     public float speedy;

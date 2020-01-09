@@ -7,7 +7,7 @@ public class Grenade : MonoBehaviour
     public LayerMask Mask;
     public float throwForce = 200f;
     public float delay = 2f;
-    public float blastRadius = 300f;
+    public float blastRadius = 400f;
     public float explosionForce = 500f;
     public float damage = 10;
     

@@ -8,6 +8,7 @@ public class PlayerControlledControlledMovement : MonoBehaviour
     public int dodgeSpeed;
     public int dodgeFrames;
     public int rollCooldown;
+    public int coinCount;
 
     private int canRoll;
 
@@ -15,6 +16,11 @@ public class PlayerControlledControlledMovement : MonoBehaviour
 
     Vector2 dodgeMemory = new Vector2();
    
+    void AddCoins(int howMany)
+    {
+        coinCount += howMany;
+    }
+
     void Start()
     {
         anim = GetComponent<Animator>();

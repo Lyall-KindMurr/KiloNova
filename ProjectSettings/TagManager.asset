@@ -17,8 +17,8 @@ TagManager:
   - PlayerDamage
   - PlayerAllies
   - EnemyDamage
-  - 
-  - 
+  - Collectible
+  - UnpassableWall
   - 
   - 
   - 

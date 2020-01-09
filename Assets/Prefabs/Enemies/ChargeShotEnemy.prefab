@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2330921903983391339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawnpointL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2330921904344927042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawnpointR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2330921904392273003}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,13 +100,15 @@ GameObject:
   m_Component:
   - component: {fileID: 2330921904740426852}
   - component: {fileID: 2330921904740426855}
+  - component: {fileID: 5743051134773817962}
   - component: {fileID: 2330921904740426854}
   - component: {fileID: 2330921904740426905}
   - component: {fileID: 2330921904740426904}
   - component: {fileID: 2330921904740426907}
   - component: {fileID: 2330921904740426850}
   - component: {fileID: 2330921904740426853}
-  m_Layer: 0
+  - component: {fileID: 6304206714475610164}
+  m_Layer: 8
   m_Name: ChargeShotEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,8 +167,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1185776751
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 39f75e2300174a64286290c8ede08ac2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -179,6 +181,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5743051134773817962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330921904740426906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59427e0fe975a14887e0367481ec528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2330921904740426854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b33c848c599764fa304d80a42a7fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 200
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -290,8 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedx: 0
-  speedy: 0.2
-  time: 5
+  speedy: -0.2
+  time: 2
 --- !u!114 &2330921904740426853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,3 +325,29 @@ MonoBehaviour:
   bulletSpawnRight: {fileID: 2330921904344927042}
   fireTimeMin: 50
   fireTimeMax: 100
+--- !u!61 &6304206714475610164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330921904740426906}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0066742897, y: -0.056729794}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0533934, y: 0.8865404}
+  m_EdgeRadius: 0
