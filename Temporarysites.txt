@@ -1,6 +1,0 @@
-https://gamedev.stackexchange.com/questions/148386/how-to-make-gameobjects-in-unity-move-in-predefined-patterns-easily
-https://github.com/grimpunch/SimpleShmup
-
-piskel
-
-https://answers.unity.com/questions/11696/how-to-make-my-bullets-spread-when-fired.html
