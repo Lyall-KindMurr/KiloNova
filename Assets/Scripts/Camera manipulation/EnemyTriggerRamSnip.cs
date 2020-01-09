@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChargeShotTrigger : MonoBehaviour
+public class EnemyTriggerRamSnip : MonoBehaviour
 {
     private void Start()
     {
@@ -16,8 +16,7 @@ public class ChargeShotTrigger : MonoBehaviour
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(true);
-            child.GetComponent<MoveAndFreeze>().enabled = true;
-
+            child.GetComponent<EnemyFindPlayer>().enabled = true;
         }
         Debug.Log("Enabled children");
         this.GetComponent<Scrolling>().enabled = false;

@@ -20,7 +20,9 @@ public class Slasher : MonoBehaviour
     private void Fire()
     {
         isFiring = true;
+
         Instantiate(slashPrefab, bulletSpawn.position, bulletSpawn.rotation);
+
         if (GetComponent<AudioSource>() != null)
         {
             GetComponent<AudioSource>().Play();

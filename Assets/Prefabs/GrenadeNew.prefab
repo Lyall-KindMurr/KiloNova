@@ -120,8 +120,8 @@ MonoBehaviour:
     m_Bits: 256
   throwForce: 5
   delay: 0.75
-  blastRadius: 1
-  explosionForce: 500
+  blastRadius: 2
+  explosionForce: 2000
   damage: 10
   explosionEffect: {fileID: 316170469807369933, guid: f8b8f195673128b4cb3fb117114ee14b,
     type: 3}

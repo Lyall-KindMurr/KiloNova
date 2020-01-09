@@ -9,7 +9,7 @@ public class EnemyFindPlayer : MonoBehaviour
 {
     public EnemySpawnedEvent onSpawn;
 
-    private void Start()
+    private void OnEnable()
     {
         GameObject player = GameObject.FindWithTag("Player");
         onSpawn.Invoke(player.transform);

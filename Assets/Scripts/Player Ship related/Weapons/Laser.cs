@@ -8,22 +8,33 @@ public class Laser : MonoBehaviour
     public int damage = 50;
     public LineRenderer linerenderer;
     public LayerMask mask;
+    public float fireTime = 1f;
 
 
-    void Update()
+    private bool isFiring = false;
+
+
+    private void SetFiring()
     {
-        if (Input.GetButtonDown("Fire2"))
-        {
-            StartCoroutine(Shoot());
-        }
+        isFiring = false;
+    }
+    private void HideLaser()
+    {
+        linerenderer.enabled = false;
+        
     }
 
-    IEnumerator Shoot()
+    private void Fire()
     {
+        isFiring = true;
+
         RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.up, 100, mask);
 
         if (hitInfo)
         {
+            linerenderer.enabled = true;
+            isFiring = true;
+
             Debug.Log(hitInfo.transform.name);
             RedHealthSystem enemy1 = hitInfo.transform.GetComponent<RedHealthSystem>();
             if (enemy1 != null)
@@ -35,15 +46,15 @@ public class Laser : MonoBehaviour
             {
                 enemy2.TakeDamageSniper(damage);
             }
-            ChargeHealthSystem enemy3 = hitInfo.transform.GetComponent<ChargeHealthSystem>();
-            if (enemy2 != null)
+            SniperHealthSystem enemy3 = hitInfo.transform.GetComponent<SniperHealthSystem>();
+            if (enemy3 != null)
             {
-                enemy2.TakeDamageSniper(damage);
+                enemy3.TakeDamageSniper(damage);
             }
-            ChargeHealthSystem enemy4 = hitInfo.transform.GetComponent<ChargeHealthSystem>();
-            if (enemy2 != null)
+            RammerHealthSystem enemy4 = hitInfo.transform.GetComponent<RammerHealthSystem>();
+            if (enemy4 != null)
             {
-                enemy2.TakeDamageSniper(damage);
+                enemy4.TakeDamageSniper(damage);
             }
 
             linerenderer.SetPosition(0, firePoint.position);
@@ -51,14 +62,21 @@ public class Laser : MonoBehaviour
         }
         else
         {
+            linerenderer.enabled = true;
             linerenderer.SetPosition(0, firePoint.position);
-            linerenderer.SetPosition(1, firePoint.position + firePoint.up *20);
+            linerenderer.SetPosition(1, firePoint.position + firePoint.up * 13);
         }
 
-        linerenderer.enabled = true;
+        Invoke("SetFiring", fireTime);
+        Invoke("HideLaser", fireTime/10);
+    }
 
-        yield return new WaitForSeconds(0.10f);
-
-        linerenderer.enabled = false;
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (!isFiring)
+            { Fire(); }
+        }
     }
 }
