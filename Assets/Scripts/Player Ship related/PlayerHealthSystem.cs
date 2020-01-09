@@ -15,4 +15,13 @@ public class PlayerHealthSystem : MonoBehaviour
             onDie.Invoke();
         }
     }
+    public void TakeDamageSlash(int damage)
+    {
+        health -= damage;
+        onDamaged.Invoke(health);
+        if (health < 1)
+        {
+            onDie.Invoke();
+        }
+    }
 }

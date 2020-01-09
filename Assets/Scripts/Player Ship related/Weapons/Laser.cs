@@ -5,7 +5,7 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     public Transform firePoint;
-    public int damage = 10;
+    public int damage = 50;
     public LineRenderer linerenderer;
     public LayerMask mask;
 
@@ -25,10 +25,25 @@ public class Laser : MonoBehaviour
         if (hitInfo)
         {
             Debug.Log(hitInfo.transform.name);
-            HeathSystem enemy = hitInfo.transform.GetComponent<HeathSystem>();
-            if (enemy != null)
+            RedHealthSystem enemy1 = hitInfo.transform.GetComponent<RedHealthSystem>();
+            if (enemy1 != null)
             {
-                enemy.TakeDamage(damage);
+                enemy1.TakeDamageSniper(damage);
+            }
+            ChargeHealthSystem enemy2 = hitInfo.transform.GetComponent<ChargeHealthSystem>();
+            if (enemy2 != null)
+            {
+                enemy2.TakeDamageSniper(damage);
+            }
+            ChargeHealthSystem enemy3 = hitInfo.transform.GetComponent<ChargeHealthSystem>();
+            if (enemy2 != null)
+            {
+                enemy2.TakeDamageSniper(damage);
+            }
+            ChargeHealthSystem enemy4 = hitInfo.transform.GetComponent<ChargeHealthSystem>();
+            if (enemy2 != null)
+            {
+                enemy2.TakeDamageSniper(damage);
             }
 
             linerenderer.SetPosition(0, firePoint.position);

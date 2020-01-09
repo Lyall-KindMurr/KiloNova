@@ -10,6 +10,4 @@ public class Slash : MonoBehaviour
     {
         other.transform.SendMessage("TakeDamageSlash", damage, SendMessageOptions.DontRequireReceiver);
     }
-
-
 }

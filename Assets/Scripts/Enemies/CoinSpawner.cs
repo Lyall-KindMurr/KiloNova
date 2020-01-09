@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject Coin;
+    public float adjustmentAngle = 0;
+    public void Spawn()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Vector3 rotationInDegrees = transform.eulerAngles;
+        rotationInDegrees.z += adjustmentAngle;
+        Quaternion rotationInRadians = Quaternion.Euler(rotationInDegrees);
+        Instantiate(Coin, transform.position, rotationInRadians);
     }
 }
