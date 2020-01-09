@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 2484987106045250635}
   - component: {fileID: 2484987106045250636}
   - component: {fileID: 2484987106045250637}
+  - component: {fileID: 331415043725968503}
   m_Layer: 8
   m_Name: RammerEnemy
   m_TagString: NoHeathTag
@@ -408,3 +409,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 2.5
+--- !u!114 &331415043725968503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484987106045250610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015714dc0ed5fe54cbf5e8d6d5850c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 11

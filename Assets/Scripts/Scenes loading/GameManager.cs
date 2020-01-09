@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadWinArea()
     {
-        SceneManager.LoadScene("Winner");
+        SceneManager.LoadScene("Victory");
     }
     public void BackToMainMenu()
     {

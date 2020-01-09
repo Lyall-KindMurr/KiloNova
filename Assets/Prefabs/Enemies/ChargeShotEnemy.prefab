@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 2330921904740426853}
   - component: {fileID: 6304206714475610164}
   - component: {fileID: 5130427424765082995}
+  - component: {fileID: 7723557199454721133}
   m_Layer: 8
   m_Name: ChargeShotEnemy
   m_TagString: NoHeathTag
@@ -194,6 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59427e0fe975a14887e0367481ec528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coin: {fileID: 0}
+  adjustmentAngle: 0
 --- !u!114 &2330921904740426854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,3 +376,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7723557199454721133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330921904740426906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015714dc0ed5fe54cbf5e8d6d5850c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 22
