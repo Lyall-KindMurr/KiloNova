@@ -9,16 +9,20 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
-    public void LoadLevel2()
-    {
-        SceneManager.LoadScene("LoadLevel2");
-    }
     public void LoadWinArea()
     {
         SceneManager.LoadScene("Victory");
     }
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadDead()
+    {
+        SceneManager.LoadScene("Defeat");
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

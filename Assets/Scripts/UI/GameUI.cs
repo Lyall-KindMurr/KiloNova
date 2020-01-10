@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 public class GameUI : MonoBehaviour
 {
+    /*
     public Slider healthBar;
     public Text scoreText;
     public int playerScore = 0;
@@ -25,4 +26,5 @@ public class GameUI : MonoBehaviour
         playerScore += theScore;
         scoreText.text = "SCORE: " + playerScore.ToString();
     }
+    */
 }
